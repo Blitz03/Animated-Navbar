@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-color: linear-gradient(to right, #5f0a87, #a4508b);
+  --secondary-color: #222327;
+  --background-color: #dcdcdc;
+  --main-transition: 0.4s all linear;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+nav {
+  width: 400px;
+  height: 70px;
+  background-color: var(--secondary-color);
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  width: 350px;
+}
+nav ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+nav ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+nav ul li a .icon {
+  position: relative;
+  display: block;
+  font-size: 1.5em;
+  line-height: 75px;
+  text-align: center;
+  transition: var(--main-transition);
+  color: var(--background-color);
+}
+nav ul li.active a .icon {
+  transform: translateY(-32px);
+}
+nav ul li a .text {
+  position: absolute;
+  color: var(--background-color);
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: var(--main-transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+nav ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--main-color);
+  top: -50%;
+  border-radius: 50%;
+  border: 6px solid var(--background-color);
+  transition: var(--main-transition);
+}
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 1 -10px 0 0 var(--background-color);
+}
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: -1 -10px 0 0 var(--background-color);
+}
